@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("KevinUtility.NetTests")]
+[assembly: AssemblyTitle("KevinUtilityTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KevinUtility.NetTests")]
+[assembly: AssemblyProduct("KevinUtilityTests")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("70a83338-89f5-4d5c-8259-786ac1d1ff5d")]
+[assembly: Guid("b8614d58-f710-4309-9717-974e23d6fc38")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
