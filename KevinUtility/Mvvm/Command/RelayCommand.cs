@@ -28,6 +28,11 @@ namespace KevinUtility.Mvvm
             remove { CommandManager.RequerySuggested -= value; }
         }
 
+        public void RaiseCanExecuteChanged()
+        {
+            CommandManager.InvalidateRequerySuggested();
+        }
+
         public bool CanExecute(object parameter)
         {
             return _runable != null ? _runable.Invoke() : true;
@@ -58,6 +63,11 @@ namespace KevinUtility.Mvvm
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CommandManager.InvalidateRequerySuggested();
         }
 
         public bool CanExecute(object parameter)

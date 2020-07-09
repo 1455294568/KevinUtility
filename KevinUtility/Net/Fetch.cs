@@ -51,7 +51,14 @@ namespace KevinUtility.Net
                     {
                         foreach (var i in header)
                         {
-                            request.Headers.Add(i.Key, i.Value.ToString());
+                            if (i.Key == "Content-Type")
+                            {
+                                request.ContentType = i.Value.ToString();
+                            }
+                            else
+                            {
+                                request.Headers.Add(i.Key, i.Value.ToString());
+                            }
                         }
                     }
 
