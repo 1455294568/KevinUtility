@@ -23,7 +23,7 @@ namespace KevinUtility.Net.Tests
                     { "Content-Type", "application/json" },
                     { "Authorization", "123" }
                },
-               body: new { CheckWeighter = false }
+               body: JsonHelper.SerializeObject( new { CheckWeighter = false })
            ).Then(s =>
            {
                if (s.StatusCode == HttpStatusCode.OK)

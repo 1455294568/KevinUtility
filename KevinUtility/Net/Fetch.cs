@@ -57,8 +57,7 @@ namespace KevinUtility.Net
 
                     if (body != null)
                     {
-                        var data = JsonHelper.SerializeObject(body);
-                        request.ContentLength = Encoding.UTF8.GetByteCount(data);
+                        request.ContentLength = Encoding.UTF8.GetByteCount(body.ToString());
 
                         var connectTask = request.GetRequestStreamAsync();
                         if (!connectTask.Wait(timeOut))
@@ -67,9 +66,9 @@ namespace KevinUtility.Net
                             return new FetchedResponse();
                         }
 
-                        using (var streamWriter = new StreamWriter(connectTask.Result))
+                        using (var streamWriter = new StreamWriter(connectTask.Result, Encoding.UTF8))
                         {
-                            streamWriter.Write(data);
+                            streamWriter.Write(body.ToString());
                         }
                     }
 
