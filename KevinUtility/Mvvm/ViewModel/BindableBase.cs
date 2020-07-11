@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KevinUtility.Mvvm
 {
-    public class ViewBase : INotifyPropertyChanged
+    public class BindableBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

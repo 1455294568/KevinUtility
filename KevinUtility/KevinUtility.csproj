@@ -53,7 +53,7 @@
     <Compile Include="Mvvm\Command\RelayCommand.cs" />
     <Compile Include="Mvvm\Messaging\IMessenger.cs" />
     <Compile Include="Mvvm\Messaging\Messenger.cs" />
-    <Compile Include="Mvvm\ViewModel\ViewBase.cs" />
+    <Compile Include="Mvvm\ViewModel\BindableBase.cs" />
     <Compile Include="Net\Fetch.cs" />
     <Compile Include="Net\Models\AwaitableResponse.cs" />
     <Compile Include="Net\Models\AwaitableResult.cs" />
