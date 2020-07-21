@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static KevinUtility.DebugUtil;
 
 namespace KevinUtility.Net.Models
 {
@@ -30,7 +31,15 @@ namespace KevinUtility.Net.Models
             var task2 = Task.Factory.StartNew<outEntity>(() =>
             {
                 task.Wait();
-                return predict(task.Result);
+                if (task.Result != null)
+                {
+                    return predict(task.Result);
+                }
+                else
+                {
+                    Log("[Then] The result of the task is null, skipped predicting.");
+                    return default(outEntity);
+                }
             });
             return new AwaitableResult<outEntity>(task2);
         }
@@ -43,7 +52,16 @@ namespace KevinUtility.Net.Models
         /// <returns></returns>
         public async Task<outEntity> DoneAsync<outEntity>(Func<T, outEntity> predict)
         {
-            return predict(await task);
+            var result = await task;
+            if (result != null)
+            {
+                return predict(result);
+            }
+            else
+            {
+                Log("[DoneAsync] The result of the task is null, skipped predicting.");
+                return default(outEntity);
+            }
         }
 
         /// <summary>
@@ -64,7 +82,15 @@ namespace KevinUtility.Net.Models
         public outEntity Done<outEntity>(Func<T, outEntity> predict)
         {
             task.Wait();
-            return predict(task.Result);
+            if (task.Result != null)
+            {
+                return predict(task.Result);
+            }
+            else
+            {
+                Log("[Done] The result of the task is null, skipped predicting.");
+                return default(outEntity);
+            }
         }
 
         /// <summary>

@@ -49,6 +49,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DebugUtil.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="Mvvm\Command\RelayCommand.cs" />
     <Compile Include="Mvvm\Messaging\IMessenger.cs" />
